@@ -7,7 +7,7 @@
 ;;; Commentary:
 
 ;; Tests for the TailwindCSS Emacs integration package.
-;; Run with: emacs -batch -l ert -l tailwindcss.el -l tailwindcss-test.el -f ert-run-tests-batch-and-exit
+;; Run with: emacs -batch -l ert -l tailwindcss.el -l elisp-tests/tailwindcss-test.el -f ert-run-tests-batch-and-exit
 
 ;;; Code:
 

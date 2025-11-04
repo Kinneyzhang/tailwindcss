@@ -167,16 +167,25 @@
 
     <!-- Example 9: Custom Utilities -->
     <!-- 
-    You can add custom classes to Emacs configuration:
+    NOTE: The classes "hero-section" and "card-container" below are custom classes
+    that you need to add to your Emacs configuration first:
+    
     (setq tailwindcss-utilities-list
           (append tailwindcss-utilities-list
                   '("hero-section" "card-container")))
+    
+    Without adding them, they will show as invalid when validated.
+    This demonstrates how to extend the package with your own custom classes.
     -->
-    <div class="hero-section container mx-auto px-4 py-16">
-        <div class="card-container max-w-4xl mx-auto">
+    <div class="container mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto">
             <h2 class="text-4xl font-bold text-center text-gray-900 mb-8">
-                Custom Utilities
+                Custom Utilities Example
             </h2>
+            <p class="text-gray-600 text-center">
+                To use custom classes like "hero-section" or "card-container",
+                add them to tailwindcss-utilities-list in your Emacs config.
+            </p>
         </div>
     </div>
 

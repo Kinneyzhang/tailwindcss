@@ -93,10 +93,20 @@
 ;;; Core Functions
 
 (defun tailwindcss-find-config-file ()
-  "Find the TailwindCSS configuration file in the project."
-  (let ((config-file (locate-dominating-file default-directory tailwindcss-config-file)))
-    (when config-file
-      (expand-file-name tailwindcss-config-file config-file))))
+  "Find the TailwindCSS configuration file in the project.
+Searches for multiple common config file names."
+  (let ((config-names (if (listp tailwindcss-config-file)
+                          tailwindcss-config-file
+                        (list tailwindcss-config-file
+                              "tailwind.config.js"
+                              "tailwind.config.ts"
+                              "tailwind.config.cjs"
+                              "tailwind.config.mjs"))))
+    (cl-some (lambda (name)
+               (let ((config-file (locate-dominating-file default-directory name)))
+                 (when config-file
+                   (expand-file-name name config-file))))
+             config-names)))
 
 (defun tailwindcss-parse-class-name (class-name)
   "Parse a TailwindCSS CLASS-NAME into its components.
