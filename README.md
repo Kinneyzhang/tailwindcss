@@ -21,9 +21,53 @@
 
 ---
 
-## Documentation
+## Emacs Lisp Integration
 
-For full documentation, visit [tailwindcss.com](https://tailwindcss.com).
+This repository includes a complete Emacs Lisp implementation for TailwindCSS integration! 🎉
+
+### Features
+
+- ✨ Syntax highlighting for TailwindCSS configuration files
+- 🔍 Class name validation and completion
+- 📝 Auto-completion for utility classes
+- 🔨 CLI integration for building TailwindCSS
+- 📦 Class sorting according to recommended order
+- 🎯 Quick navigation to config files
+
+### Quick Start
+
+```emacs-lisp
+;; Add to your ~/.emacs or ~/.emacs.d/init.el
+(add-to-list 'load-path "/path/to/tailwindcss")
+(require 'tailwindcss)
+
+;; Enable in HTML and JavaScript files
+(add-hook 'html-mode-hook 'tailwindcss-mode)
+(add-hook 'js-mode-hook 'tailwindcss-mode)
+```
+
+### Documentation
+
+- **English**: [EMACS-LISP-README.md](EMACS-LISP-README.md)
+- **中文**: [README-zh.md](README-zh.md)
+- **Quick Start**: [QUICKSTART.md](QUICKSTART.md)
+- **Development**: [DEVELOPMENT.md](DEVELOPMENT.md)
+- **Examples**: [examples/](examples/)
+
+### Main Commands
+
+- `M-x tailwindcss-mode` - Enable TailwindCSS mode
+- `M-x tailwindcss-build` - Build TailwindCSS
+- `M-x tailwindcss-list-classes` - List all classes in buffer
+- `M-x tailwindcss-validate-buffer` - Validate class names
+- `M-x tailwindcss-sort-classes-in-region` - Sort selected classes
+- `M-x tailwindcss-open-config` - Open configuration file
+
+---
+
+## TailwindCSS Framework Documentation
+
+For full TailwindCSS framework documentation, visit [tailwindcss.com](https://tailwindcss.com).
 
 ## Community
 

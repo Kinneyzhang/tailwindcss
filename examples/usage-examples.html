@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TailwindCSS Emacs Integration - Usage Examples</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- 
+    This file demonstrates various TailwindCSS patterns that work well
+    with the Emacs integration.
+    
+    Try these commands in Emacs:
+    - M-x tailwindcss-list-classes - See all classes used
+    - M-x tailwindcss-validate-buffer - Validate all classes
+    - Select a class attribute and run: M-x tailwindcss-sort-classes-in-region
+    -->
+
+    <!-- Example 1: Flex Layout -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex items-center justify-between bg-white rounded-lg shadow-md p-6">
+            <h1 class="text-2xl font-bold text-gray-800">
+                TailwindCSS with Emacs
+            </h1>
+            <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
+                Get Started
+            </button>
+        </div>
+    </div>
+
+    <!-- Example 2: Grid Layout -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-semibold mb-4">Card 1</h2>
+                <p class="text-gray-600">This is a card with responsive grid layout.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-semibold mb-4">Card 2</h2>
+                <p class="text-gray-600">Resize the window to see responsiveness.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-semibold mb-4">Card 3</h2>
+                <p class="text-gray-600">Classes are validated by Emacs.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example 3: Forms -->
+    <div class="container mx-auto px-4 py-8">
+        <form class="bg-white rounded-lg shadow-md p-8 max-w-md mx-auto">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                    Email Address
+                </label>
+                <input 
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="email" 
+                    type="email" 
+                    placeholder="you@example.com"
+                >
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                    Password
+                </label>
+                <input 
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                    id="password" 
+                    type="password" 
+                    placeholder="******************"
+                >
+            </div>
+            <div class="flex items-center justify-between">
+                <button 
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="button"
+                >
+                    Sign In
+                </button>
+                <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                    Forgot Password?
+                </a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Example 4: Responsive Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-4">
+                    <a class="text-xl font-bold text-gray-800" href="#">
+                        Logo
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a class="text-gray-600 hover:text-gray-900 font-medium" href="#">Home</a>
+                    <a class="text-gray-600 hover:text-gray-900 font-medium" href="#">About</a>
+                    <a class="text-gray-600 hover:text-gray-900 font-medium" href="#">Services</a>
+                    <a class="text-gray-600 hover:text-gray-900 font-medium" href="#">Contact</a>
+                </div>
+                <button class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Example 5: Complex Component with State Variants -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">
+                    Interactive Component
+                </h3>
+                <div class="space-y-4">
+                    <button class="w-full bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200">
+                        Hover & Active States
+                    </button>
+                    <button class="w-full bg-green-500 hover:bg-green-600 focus:ring-4 focus:ring-green-300 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200">
+                        Focus Ring
+                    </button>
+                    <button disabled class="w-full bg-gray-300 text-gray-500 font-semibold py-3 px-6 rounded-lg cursor-not-allowed">
+                        Disabled State
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Example 6: Dark Mode Support -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                Dark Mode Example
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+                This component adapts to dark mode preferences.
+            </p>
+        </div>
+    </div>
+
+    <!-- Example 7: Animations and Transitions -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex items-center justify-center space-x-4">
+            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
+            <div class="animate-pulse bg-blue-500 h-8 w-8 rounded"></div>
+            <div class="animate-bounce bg-green-500 h-8 w-8 rounded"></div>
+        </div>
+    </div>
+
+    <!-- Example 8: Responsive Typography -->
+    <div class="container mx-auto px-4 py-8">
+        <article class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900">
+                Responsive Heading
+            </h1>
+            <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600">
+                This text scales with viewport size. Try resizing your browser window.
+            </p>
+        </article>
+    </div>
+
+    <!-- Example 9: Custom Utilities -->
+    <!-- 
+    NOTE: The classes "hero-section" and "card-container" below are custom classes
+    that you need to add to your Emacs configuration first:
+    
+    (setq tailwindcss-utilities-list
+          (append tailwindcss-utilities-list
+                  '("hero-section" "card-container")))
+    
+    Without adding them, they will show as invalid when validated.
+    This demonstrates how to extend the package with your own custom classes.
+    -->
+    <div class="container mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-8">
+                Custom Utilities Example
+            </h2>
+            <p class="text-gray-600 text-center">
+                To use custom classes like "hero-section" or "card-container",
+                add them to tailwindcss-utilities-list in your Emacs config.
+            </p>
+        </div>
+    </div>
+
+    <!-- Example 10: Complex Layouts -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-4">Main Content</h3>
+                    <p class="text-gray-600 mb-4">
+                        This is a two-column layout that stacks on mobile.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-100 p-4 rounded">Item 1</div>
+                        <div class="bg-gray-100 p-4 rounded">Item 2</div>
+                        <div class="bg-gray-100 p-4 rounded">Item 3</div>
+                        <div class="bg-gray-100 p-4 rounded">Item 4</div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-lg shadow-lg p-6 sticky top-4">
+                    <h3 class="text-xl font-bold mb-4">Sidebar</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-600">Item 1</li>
+                        <li class="text-gray-600">Item 2</li>
+                        <li class="text-gray-600">Item 3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+    Emacs Commands to Try:
+    
+    1. List all classes:
+       M-x tailwindcss-list-classes
+    
+    2. Validate classes:
+       M-x tailwindcss-validate-buffer
+    
+    3. Sort classes (select a class attribute first):
+       M-x tailwindcss-sort-classes-in-region
+    
+    4. Open config:
+       M-x tailwindcss-open-config
+    
+    5. Build CSS:
+       M-x tailwindcss-build
+    -->
+
+</body>
+</html>
